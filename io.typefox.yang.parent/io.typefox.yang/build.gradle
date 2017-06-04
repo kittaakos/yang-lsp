@@ -1,4 +1,9 @@
 configurations {
+	compile {
+	    resolutionStrategy { 
+	        force 'org.antlr:antlr:3.2.1'
+	    }
+	}
 	mwe2 {
 		extendsFrom compile
 	}
@@ -11,6 +16,10 @@ dependencies {
 	
 	compile "org.eclipse.xtext:org.eclipse.xtext:${xtextVersion}"
 	compile "org.eclipse.xtext:org.eclipse.xtext.xbase:${xtextVersion}"
+	compile("org.antlr:antlr-runtime:3.2.1") {
+		force = true
+	}
+	compile project(':io.typefox.yang.lexer')
     
     mwe2 "io.typefox:jflex-fragment:0.0.1-SNAPSHOT"
 	mwe2 "org.eclipse.emf:org.eclipse.emf.mwe2.launch:2.9.0.201605261059"

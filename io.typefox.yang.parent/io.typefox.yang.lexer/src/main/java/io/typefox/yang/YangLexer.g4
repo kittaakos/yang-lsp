@@ -1,0 +1,98 @@
+// Define a grammar called Hello
+lexer grammar YangLexer;
+
+@header {
+	package io.typefox.yang;
+}
+
+Action: 'action'                        ;
+Anydata: 'anydata'                      ;
+Anyxml: 'anyxml'                         ;
+Argument: 'argument'                    ;
+Augment: 'augment'                      ;
+Base: 'base'                            ;
+BelongsTo: 'belongs-to'                 ;
+Bit: 'bit'                              ;
+Case: 'case'                            ;
+Choice: 'choice'                        ;
+Config: 'config'                        ;
+Contact: 'contact'                      ;
+Container: 'container'                  ;
+Default:  'default'                     ;
+Description:  'description'             ;
+Enum:  'enum'                           ;
+ErrorAppTag: 'error-app-tag'            ;
+ErrorMessage: 'error-message'           ;
+Extension: 'extension'                  ;
+Deviation: 'deviation'                  ;
+Deviate: 'deviate'                      ;
+Feature: 'feature'                      ;
+FractionDigits: 'fraction-digits'       ;
+Grouping: 'grouping'                    ;
+Identity: 'identity'                    ;
+IfFeature: 'if-feature'                 ;
+Import: 'import'                        ;
+Include: 'include'                      ;
+Input: 'input'                          ;
+Key: 'key'                              ;
+Leaf: 'leaf'                            ;
+LeafList: 'leaf-list'                   ;
+Length: 'length'                        ;
+List: 'list'                            ;
+Mandatory: 'mandatory'                  ;
+MaxElements: 'max-elements'             ;
+MinElements: 'min-elements'             ;
+Module: 'module' -> mode(YANG_VALUE);
+Must: 'must'                            ;
+Namespace: 'namespace'                  ;
+Notification: 'notification'            ;
+OrderedBy: 'ordered-by'                 ;
+Organization: 'organization'              ;
+Output: 'output'                        ;
+Path: 'path' -> mode(EXPR);
+Pattern: 'pattern'                      ;
+Position: 'position'                    ;
+Prefix: 'prefix'                        ;
+Presence: 'presence'                    ;
+Range: 'range'                          ;
+Reference: 'reference'                  ;
+Refine: 'refine'                        ;
+RequireInstance: 'require-instance'     ;
+Revision: 'revision'                    ;
+RevisionDate: 'revision-date'           ;
+Rpc: 'rpc'                              ;
+Status: 'status'                        ;
+Submodule: 'submodule'                  ;
+Type: 'type'                            ;
+Typedef: 'typedef'                      ;
+Unique: 'unique'                        ;
+Units: 'units'                          ;
+Uses: 'uses'                            ;
+Value: 'value'                          ;
+When: 'when'                            ;
+YangVersion: 'yang-version'             ;
+YinElement: 'yin-element'               ;
+
+ID : [a-zA-Z]+;
+Colon: ':';
+RightCurlyBracket: '}';
+WS : [ \t\r\n]+;
+ERROR : .;
+
+mode YANG_VALUE;
+STRING : ~[ \n\r\t{};':"]+;
+DQ_STRING : '"' .*? '"'   -> type(STRING) ;
+SQ_STRING : '\'' .*? '\'' -> type(STRING) ;
+LeftCurlyBracket: '{' -> mode(DEFAULT_MODE);
+Semicolon: ';' -> mode(DEFAULT_MODE);
+WS_YANG_VALUE : [ \t\r\n]+ -> type(WS);
+
+mode EXPR;
+ID_EXPR : [a-zA-Z]+ -> type(ID);
+Colon_EXPR: ':' -> type(Colon);
+Quote: '"';
+SingleQuote: '\'';
+Slash: '/';
+WS_EXPR : [ \t\r\n]+ -> type(WS);
+LeftCurlyBracket_EXPR: '{' -> mode(DEFAULT_MODE), type(LeftCurlyBracket);
+Semicolon_EXPR: ';' -> mode(DEFAULT_MODE), type(Semicolon);

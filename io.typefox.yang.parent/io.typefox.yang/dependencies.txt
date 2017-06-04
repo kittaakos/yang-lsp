@@ -1,0 +1,621 @@
+:io.typefox.yang:dependencies
+
+------------------------------------------------------------
+Project :io.typefox.yang
+------------------------------------------------------------
+
+archives - Configuration for archive artifacts.
+No dependencies
+
+compile - Dependencies for source set 'main'.
++--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext.util:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT
+|    |    |    +--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT
+|    |    |    |    \--- com.google.guava:guava:[14.0,19) -> 18.0
+|    |    |    \--- org.eclipse.xtend:org.eclipse.xtend.lib.macro:2.13.0-SNAPSHOT
+|    |    |         \--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT (*)
+|    |    +--- log4j:log4j:1.2.16
+|    |    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    |    +--- org.eclipse.emf:org.eclipse.emf.ecore:[2.10.2,3) -> 2.12.0
+|    |    \--- com.google.inject:guice:3.0
+|    |         +--- javax.inject:javax.inject:1
+|    |         \--- aopalliance:aopalliance:1.0
+|    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT (*)
+|    +--- log4j:log4j:1.2.16
+|    +--- org.eclipse.platform:org.eclipse.equinox.common:3.8.0
+|    +--- org.eclipse.platform:org.eclipse.osgi:3.11.2
+|    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    +--- org.eclipse.emf:org.eclipse.emf.ecore.xmi:[2.10.2,3) -> 2.12.0
+|    +--- com.google.inject:guice:3.0 (*)
+|    \--- org.antlr:antlr-runtime:3.2 -> 3.5.2
++--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT
+|    \--- org.eclipse.xtext:org.eclipse.xtext.common.types:2.13.0-SNAPSHOT
+|         +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|         \--- org.ow2.asm:asm-commons:5.0.1
+|              \--- org.ow2.asm:asm-tree:5.0.1
+|                   \--- org.ow2.asm:asm:5.0.1
++--- org.antlr:antlr:3.2.1 FAILED
+\--- org.antlr:antlr4:4.7
+     +--- org.antlr:antlr4-runtime:4.7
+     +--- org.antlr:antlr-runtime:3.5.2
+     +--- org.antlr:ST4:4.0.8
+     |    \--- org.antlr:antlr-runtime:3.5.2
+     +--- org.abego.treelayout:org.abego.treelayout.core:1.0.3
+     +--- org.glassfish:javax.json:1.0.4
+     \--- com.ibm.icu:icu4j:58.2
+
+compileClasspath - Compile classpath for source set 'main'.
++--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext.util:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT
+|    |    |    +--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT
+|    |    |    |    \--- com.google.guava:guava:[14.0,19) -> 18.0
+|    |    |    \--- org.eclipse.xtend:org.eclipse.xtend.lib.macro:2.13.0-SNAPSHOT
+|    |    |         \--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT (*)
+|    |    +--- log4j:log4j:1.2.16
+|    |    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    |    +--- org.eclipse.emf:org.eclipse.emf.ecore:[2.10.2,3) -> 2.12.0
+|    |    \--- com.google.inject:guice:3.0
+|    |         +--- javax.inject:javax.inject:1
+|    |         \--- aopalliance:aopalliance:1.0
+|    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT (*)
+|    +--- log4j:log4j:1.2.16
+|    +--- org.eclipse.platform:org.eclipse.equinox.common:3.8.0
+|    +--- org.eclipse.platform:org.eclipse.osgi:3.11.2
+|    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    +--- org.eclipse.emf:org.eclipse.emf.ecore.xmi:[2.10.2,3) -> 2.12.0
+|    +--- com.google.inject:guice:3.0 (*)
+|    \--- org.antlr:antlr-runtime:3.2 -> 3.5.2
++--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT
+|    \--- org.eclipse.xtext:org.eclipse.xtext.common.types:2.13.0-SNAPSHOT
+|         +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|         \--- org.ow2.asm:asm-commons:5.0.1
+|              \--- org.ow2.asm:asm-tree:5.0.1
+|                   \--- org.ow2.asm:asm:5.0.1
++--- org.antlr:antlr:3.2.1 FAILED
+\--- org.antlr:antlr4:4.7
+     +--- org.antlr:antlr4-runtime:4.7
+     +--- org.antlr:antlr-runtime:3.5.2
+     +--- org.antlr:ST4:4.0.8
+     |    \--- org.antlr:antlr-runtime:3.5.2
+     +--- org.abego.treelayout:org.abego.treelayout.core:1.0.3
+     +--- org.glassfish:javax.json:1.0.4
+     \--- com.ibm.icu:icu4j:58.2
+
+compileOnly - Compile dependencies for source set 'main'.
++--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext.util:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT
+|    |    |    +--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT
+|    |    |    |    \--- com.google.guava:guava:[14.0,19) -> 18.0
+|    |    |    \--- org.eclipse.xtend:org.eclipse.xtend.lib.macro:2.13.0-SNAPSHOT
+|    |    |         \--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT (*)
+|    |    +--- log4j:log4j:1.2.16
+|    |    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    |    +--- org.eclipse.emf:org.eclipse.emf.ecore:[2.10.2,3) -> 2.12.0
+|    |    \--- com.google.inject:guice:3.0
+|    |         +--- javax.inject:javax.inject:1
+|    |         \--- aopalliance:aopalliance:1.0
+|    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT (*)
+|    +--- log4j:log4j:1.2.16
+|    +--- org.eclipse.platform:org.eclipse.equinox.common:3.8.0
+|    +--- org.eclipse.platform:org.eclipse.osgi:3.11.2
+|    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    +--- org.eclipse.emf:org.eclipse.emf.ecore.xmi:[2.10.2,3) -> 2.12.0
+|    +--- com.google.inject:guice:3.0 (*)
+|    \--- org.antlr:antlr-runtime:3.2 -> 3.5.2
++--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT
+|    \--- org.eclipse.xtext:org.eclipse.xtext.common.types:2.13.0-SNAPSHOT
+|         +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|         \--- org.ow2.asm:asm-commons:5.0.1
+|              \--- org.ow2.asm:asm-tree:5.0.1
+|                   \--- org.ow2.asm:asm:5.0.1
++--- org.antlr:antlr:3.2.1 FAILED
+\--- org.antlr:antlr4:4.7
+     +--- org.antlr:antlr4-runtime:4.7
+     +--- org.antlr:antlr-runtime:3.5.2
+     +--- org.antlr:ST4:4.0.8
+     |    \--- org.antlr:antlr-runtime:3.5.2
+     +--- org.abego.treelayout:org.abego.treelayout.core:1.0.3
+     +--- org.glassfish:javax.json:1.0.4
+     \--- com.ibm.icu:icu4j:58.2
+
+default - Configuration for default artifacts.
++--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext.util:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT
+|    |    |    +--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT
+|    |    |    |    \--- com.google.guava:guava:[14.0,19) -> 18.0
+|    |    |    \--- org.eclipse.xtend:org.eclipse.xtend.lib.macro:2.13.0-SNAPSHOT
+|    |    |         \--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT (*)
+|    |    +--- log4j:log4j:1.2.16
+|    |    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    |    +--- org.eclipse.emf:org.eclipse.emf.ecore:[2.10.2,3) -> 2.12.0
+|    |    \--- com.google.inject:guice:3.0
+|    |         +--- javax.inject:javax.inject:1
+|    |         \--- aopalliance:aopalliance:1.0
+|    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT (*)
+|    +--- log4j:log4j:1.2.16
+|    +--- org.eclipse.platform:org.eclipse.equinox.common:3.8.0
+|    +--- org.eclipse.platform:org.eclipse.osgi:3.11.2
+|    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    +--- org.eclipse.emf:org.eclipse.emf.ecore.xmi:[2.10.2,3) -> 2.12.0
+|    +--- com.google.inject:guice:3.0 (*)
+|    \--- org.antlr:antlr-runtime:3.2 -> 3.5.2
++--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT
+|    \--- org.eclipse.xtext:org.eclipse.xtext.common.types:2.13.0-SNAPSHOT
+|         +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|         \--- org.ow2.asm:asm-commons:5.0.1
+|              \--- org.ow2.asm:asm-tree:5.0.1
+|                   \--- org.ow2.asm:asm:5.0.1
++--- org.antlr:antlr:3.2.1 FAILED
+\--- org.antlr:antlr4:4.7
+     +--- org.antlr:antlr4-runtime:4.7
+     +--- org.antlr:antlr-runtime:3.5.2
+     +--- org.antlr:ST4:4.0.8
+     |    \--- org.antlr:antlr-runtime:3.5.2
+     +--- org.abego.treelayout:org.abego.treelayout.core:1.0.3
+     +--- org.glassfish:javax.json:1.0.4
+     \--- com.ibm.icu:icu4j:58.2
+
+mwe2
++--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext.util:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT
+|    |    |    +--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT
+|    |    |    |    \--- com.google.guava:guava:[14.0,19) -> 18.0
+|    |    |    \--- org.eclipse.xtend:org.eclipse.xtend.lib.macro:2.13.0-SNAPSHOT
+|    |    |         \--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT (*)
+|    |    +--- log4j:log4j:1.2.16
+|    |    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    |    +--- org.eclipse.emf:org.eclipse.emf.ecore:[2.10.2,3) -> 2.12.0
+|    |    \--- com.google.inject:guice:3.0
+|    |         +--- javax.inject:javax.inject:1
+|    |         +--- aopalliance:aopalliance:1.0
+|    |         \--- org.sonatype.sisu.inject:cglib:2.2.1-v20090111
+|    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT (*)
+|    +--- log4j:log4j:1.2.16
+|    +--- org.eclipse.platform:org.eclipse.equinox.common:3.8.0
+|    +--- org.eclipse.platform:org.eclipse.osgi:3.11.2
+|    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    +--- org.eclipse.emf:org.eclipse.emf.ecore.xmi:[2.10.2,3) -> 2.12.0
+|    +--- com.google.inject:guice:3.0 (*)
+|    \--- org.antlr:antlr-runtime:3.2 -> 3.5.2
++--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT
+|    \--- org.eclipse.xtext:org.eclipse.xtext.common.types:2.13.0-SNAPSHOT
+|         +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|         \--- org.ow2.asm:asm-commons:5.0.1
+|              \--- org.ow2.asm:asm-tree:5.0.1
+|                   \--- org.ow2.asm:asm:5.0.1
++--- org.antlr:antlr:3.2.1 FAILED
++--- org.antlr:antlr4:4.7
+|    +--- org.antlr:antlr4-runtime:4.7
+|    +--- org.antlr:antlr-runtime:3.5.2
+|    +--- org.antlr:ST4:4.0.8
+|    |    \--- org.antlr:antlr-runtime:3.5.2
+|    +--- org.abego.treelayout:org.abego.treelayout.core:1.0.3
+|    +--- org.glassfish:javax.json:1.0.4
+|    \--- com.ibm.icu:icu4j:58.2
++--- io.typefox:jflex-fragment:0.0.1-SNAPSHOT
+|    \--- org.eclipse.xtext:org.eclipse.xtext.xtext.generator:2.11.0 -> 2.13.0-SNAPSHOT
+|         +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|         +--- org.eclipse.emf:org.eclipse.emf.codegen:[2.10.2,3) -> 2.11.0
+|         +--- org.eclipse.emf:org.eclipse.emf.codegen.ecore:[2.10.2,3) -> 2.12.0
+|         +--- org.eclipse.emf:org.eclipse.emf.mwe.utils:1.3.20.201605261059
+|         |    \--- org.eclipse.emf:org.eclipse.emf.mwe.core:[1.3.20.201605261059] -> 1.3.20.201605261059
+|         |         +--- org.eclipse.emf:org.eclipse.emf.mwe2.runtime:[2.9.0.201605261059] -> 2.9.0.201605261059
+|         |         |    \--- com.google.inject:guice:3.0 (*)
+|         |         +--- commons-cli:commons-cli:1.2
+|         |         \--- commons-logging:commons-logging:1.1.3
+|         +--- org.eclipse.emf:org.eclipse.emf.mwe2.lib:2.9.0.201605261059
+|         |    \--- org.eclipse.emf:org.eclipse.emf.mwe2.runtime:[2.9.0.201605261059] -> 2.9.0.201605261059 (*)
+|         \--- com.ibm.icu:icu4j:52.1 -> 58.2
++--- org.eclipse.emf:org.eclipse.emf.mwe2.launch:2.9.0.201605261059
+|    +--- org.eclipse.emf:org.eclipse.emf.mwe2.runtime:[2.9.0.201605261059] -> 2.9.0.201605261059 (*)
+|    +--- org.eclipse.emf:org.eclipse.emf.mwe2.language:[2.9.0.201605261059] -> 2.9.0.201605261059
+|    |    \--- org.eclipse.emf:org.eclipse.emf.mwe2.runtime:[2.9.0.201605261059] -> 2.9.0.201605261059 (*)
+|    +--- com.google.guava:guava:[10.0.1,14.0.1] -> 18.0
+|    +--- commons-cli:commons-cli:1.2
+|    \--- log4j:log4j:1.2.16
++--- org.eclipse.xtext:org.eclipse.xtext.common.types:2.13.0-SNAPSHOT (*)
++--- org.eclipse.xtext:org.eclipse.xtext.xtext.generator:2.13.0-SNAPSHOT (*)
+\--- org.eclipse.xtext:xtext-antlr-generator:[2.1.1, 3) -> 2.1.1
+     +--- log4j:log4j:1.2.16
+     \--- org.xtext:antlr-generator:3.2.1
+          \--- org.antlr:antlr-runtime:[3.2] -> 3.5.2
+
+runtime - Runtime dependencies for source set 'main'.
++--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext.util:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT
+|    |    |    +--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT
+|    |    |    |    \--- com.google.guava:guava:[14.0,19) -> 18.0
+|    |    |    \--- org.eclipse.xtend:org.eclipse.xtend.lib.macro:2.13.0-SNAPSHOT
+|    |    |         \--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT (*)
+|    |    +--- log4j:log4j:1.2.16
+|    |    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    |    +--- org.eclipse.emf:org.eclipse.emf.ecore:[2.10.2,3) -> 2.12.0
+|    |    \--- com.google.inject:guice:3.0
+|    |         +--- javax.inject:javax.inject:1
+|    |         \--- aopalliance:aopalliance:1.0
+|    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT (*)
+|    +--- log4j:log4j:1.2.16
+|    +--- org.eclipse.platform:org.eclipse.equinox.common:3.8.0
+|    +--- org.eclipse.platform:org.eclipse.osgi:3.11.2
+|    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    +--- org.eclipse.emf:org.eclipse.emf.ecore.xmi:[2.10.2,3) -> 2.12.0
+|    +--- com.google.inject:guice:3.0 (*)
+|    \--- org.antlr:antlr-runtime:3.2 -> 3.5.2
++--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT
+|    \--- org.eclipse.xtext:org.eclipse.xtext.common.types:2.13.0-SNAPSHOT
+|         +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|         \--- org.ow2.asm:asm-commons:5.0.1
+|              \--- org.ow2.asm:asm-tree:5.0.1
+|                   \--- org.ow2.asm:asm:5.0.1
++--- org.antlr:antlr:3.2.1 FAILED
+\--- org.antlr:antlr4:4.7
+     +--- org.antlr:antlr4-runtime:4.7
+     +--- org.antlr:antlr-runtime:3.5.2
+     +--- org.antlr:ST4:4.0.8
+     |    \--- org.antlr:antlr-runtime:3.5.2
+     +--- org.abego.treelayout:org.abego.treelayout.core:1.0.3
+     +--- org.glassfish:javax.json:1.0.4
+     \--- com.ibm.icu:icu4j:58.2
+
+testCompile - Dependencies for source set 'test'.
++--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext.util:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT
+|    |    |    +--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT
+|    |    |    |    \--- com.google.guava:guava:[14.0,19) -> 18.0
+|    |    |    \--- org.eclipse.xtend:org.eclipse.xtend.lib.macro:2.13.0-SNAPSHOT
+|    |    |         \--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT (*)
+|    |    +--- log4j:log4j:1.2.16
+|    |    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    |    +--- org.eclipse.emf:org.eclipse.emf.ecore:[2.10.2,3) -> 2.12.0
+|    |    \--- com.google.inject:guice:3.0
+|    |         +--- javax.inject:javax.inject:1
+|    |         \--- aopalliance:aopalliance:1.0
+|    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT (*)
+|    +--- log4j:log4j:1.2.16
+|    +--- org.eclipse.platform:org.eclipse.equinox.common:3.8.0
+|    +--- org.eclipse.platform:org.eclipse.osgi:3.11.2 -> 3.11.3
+|    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    +--- org.eclipse.emf:org.eclipse.emf.ecore.xmi:[2.10.2,3) -> 2.12.0
+|    +--- com.google.inject:guice:3.0 (*)
+|    \--- org.antlr:antlr-runtime:3.2 -> 3.5.2
++--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT
+|    \--- org.eclipse.xtext:org.eclipse.xtext.common.types:2.13.0-SNAPSHOT
+|         +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|         \--- org.ow2.asm:asm-commons:5.0.1
+|              \--- org.ow2.asm:asm-tree:5.0.1
+|                   \--- org.ow2.asm:asm:5.0.1
++--- org.antlr:antlr:3.2.1 FAILED
++--- org.antlr:antlr4:4.7
+|    +--- org.antlr:antlr4-runtime:4.7
+|    +--- org.antlr:antlr-runtime:3.5.2
+|    +--- org.antlr:ST4:4.0.8
+|    |    \--- org.antlr:antlr-runtime:3.5.2
+|    +--- org.abego.treelayout:org.abego.treelayout.core:1.0.3
+|    +--- org.glassfish:javax.json:1.0.4
+|    \--- com.ibm.icu:icu4j:58.2
++--- junit:junit:4.12
+|    \--- org.hamcrest:hamcrest-core:1.3
++--- org.eclipse.xtext:org.eclipse.xtext.testing:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|    +--- org.eclipse.xtext:org.eclipse.xtext.ide:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|    |    \--- org.eclipse.lsp4j:org.eclipse.lsp4j:0.2.0
+|    |         +--- org.eclipse.lsp4j:org.eclipse.lsp4j.generator:0.2.0
+|    |         |    +--- org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.2.0
+|    |         |    |    \--- com.google.code.gson:gson:2.7
+|    |         |    \--- org.eclipse.xtend:org.eclipse.xtend.lib:[2.11.0,3) -> 2.13.0-SNAPSHOT (*)
+|    |         \--- org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.2.0 (*)
+|    \--- org.eclipse.lsp4j:org.eclipse.lsp4j:0.2.0 (*)
+\--- org.eclipse.xtext:org.eclipse.xtext.xbase.testing:2.13.0-SNAPSHOT
+     +--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT (*)
+     +--- org.eclipse.xtext:org.eclipse.xtext.testing:2.13.0-SNAPSHOT (*)
+     +--- junit:junit:4.12 (*)
+     +--- org.eclipse.jdt:org.eclipse.jdt.core:3.12.2 -> 3.12.3
+     |    +--- org.eclipse.platform:org.eclipse.core.resources:[3.3.0,4.0.0) -> 3.11.1
+     |    |    +--- org.eclipse.platform:org.eclipse.core.expressions:[3.2.0,4.0.0) -> 3.5.100
+     |    |    |    \--- org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,4.0.0) -> 3.12.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.osgi:[3.7.0,4.0.0) -> 3.11.3
+     |    |    |         +--- org.eclipse.platform:org.eclipse.equinox.common:[3.8.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.core.jobs:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.8.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.4.0,4.0.0) -> 3.6.100
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.7.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.equinox.preferences:[3.4.0,4.0.0) -> 3.6.1
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.core.contenttype:[3.3.0,4.0.0) -> 3.5.100
+     |    |    |         |    +--- org.eclipse.platform:org.eclipse.equinox.preferences:[3.2.0,4.0.0) -> 3.6.1 (*)
+     |    |    |         |    +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.2.0,4.0.0) -> 3.6.100 (*)
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |         \--- org.eclipse.platform:org.eclipse.equinox.app:[1.0.0,) -> 1.3.400
+     |    |    |              +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.4.0,4.0.0) -> 3.6.100 (*)
+     |    |    |              \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    +--- org.eclipse.platform:org.eclipse.core.filesystem:[1.3.0,2.0.0) -> 1.6.1
+     |    |    |    +--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |    +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.2.0,4.0.0) -> 3.6.100 (*)
+     |    |    |    \--- org.eclipse.platform:org.eclipse.osgi:[3.2.0,4.0.0) -> 3.11.3
+     |    |    \--- org.eclipse.platform:org.eclipse.core.runtime:[3.12.0,4.0.0) -> 3.12.0 (*)
+     |    +--- org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,4.0.0) -> 3.12.0 (*)
+     |    +--- org.eclipse.platform:org.eclipse.core.filesystem:[1.0.0,2.0.0) -> 1.6.1 (*)
+     |    \--- org.eclipse.platform:org.eclipse.text:[3.1.0,4.0.0) -> 3.6.0
+     |         +--- org.eclipse.platform:org.eclipse.core.commands:[3.5.0,4.0.0) -> 3.8.1
+     |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |         \--- org.eclipse.platform:org.eclipse.equinox.common:[3.5.0,4.0.0) -> 3.8.0
+     \--- org.eclipse.jdt:org.eclipse.jdt.compiler.apt:1.2.100
+          \--- org.eclipse.jdt:org.eclipse.jdt.core:[3.5.0,4.0.0) -> 3.12.3 (*)
+
+testCompileClasspath - Compile classpath for source set 'test'.
++--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext.util:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT
+|    |    |    +--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT
+|    |    |    |    \--- com.google.guava:guava:[14.0,19) -> 18.0
+|    |    |    \--- org.eclipse.xtend:org.eclipse.xtend.lib.macro:2.13.0-SNAPSHOT
+|    |    |         \--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT (*)
+|    |    +--- log4j:log4j:1.2.16
+|    |    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    |    +--- org.eclipse.emf:org.eclipse.emf.ecore:[2.10.2,3) -> 2.12.0
+|    |    \--- com.google.inject:guice:3.0
+|    |         +--- javax.inject:javax.inject:1
+|    |         \--- aopalliance:aopalliance:1.0
+|    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT (*)
+|    +--- log4j:log4j:1.2.16
+|    +--- org.eclipse.platform:org.eclipse.equinox.common:3.8.0
+|    +--- org.eclipse.platform:org.eclipse.osgi:3.11.2 -> 3.11.3
+|    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    +--- org.eclipse.emf:org.eclipse.emf.ecore.xmi:[2.10.2,3) -> 2.12.0
+|    +--- com.google.inject:guice:3.0 (*)
+|    \--- org.antlr:antlr-runtime:3.2 -> 3.5.2
++--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT
+|    \--- org.eclipse.xtext:org.eclipse.xtext.common.types:2.13.0-SNAPSHOT
+|         +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|         \--- org.ow2.asm:asm-commons:5.0.1
+|              \--- org.ow2.asm:asm-tree:5.0.1
+|                   \--- org.ow2.asm:asm:5.0.1
++--- org.antlr:antlr:3.2.1 FAILED
++--- org.antlr:antlr4:4.7
+|    +--- org.antlr:antlr4-runtime:4.7
+|    +--- org.antlr:antlr-runtime:3.5.2
+|    +--- org.antlr:ST4:4.0.8
+|    |    \--- org.antlr:antlr-runtime:3.5.2
+|    +--- org.abego.treelayout:org.abego.treelayout.core:1.0.3
+|    +--- org.glassfish:javax.json:1.0.4
+|    \--- com.ibm.icu:icu4j:58.2
++--- junit:junit:4.12
+|    \--- org.hamcrest:hamcrest-core:1.3
++--- org.eclipse.xtext:org.eclipse.xtext.testing:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|    +--- org.eclipse.xtext:org.eclipse.xtext.ide:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|    |    \--- org.eclipse.lsp4j:org.eclipse.lsp4j:0.2.0
+|    |         +--- org.eclipse.lsp4j:org.eclipse.lsp4j.generator:0.2.0
+|    |         |    +--- org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.2.0
+|    |         |    |    \--- com.google.code.gson:gson:2.7
+|    |         |    \--- org.eclipse.xtend:org.eclipse.xtend.lib:[2.11.0,3) -> 2.13.0-SNAPSHOT (*)
+|    |         \--- org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.2.0 (*)
+|    \--- org.eclipse.lsp4j:org.eclipse.lsp4j:0.2.0 (*)
+\--- org.eclipse.xtext:org.eclipse.xtext.xbase.testing:2.13.0-SNAPSHOT
+     +--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT (*)
+     +--- org.eclipse.xtext:org.eclipse.xtext.testing:2.13.0-SNAPSHOT (*)
+     +--- junit:junit:4.12 (*)
+     +--- org.eclipse.jdt:org.eclipse.jdt.core:3.12.2 -> 3.12.3
+     |    +--- org.eclipse.platform:org.eclipse.core.resources:[3.3.0,4.0.0) -> 3.11.1
+     |    |    +--- org.eclipse.platform:org.eclipse.core.expressions:[3.2.0,4.0.0) -> 3.5.100
+     |    |    |    \--- org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,4.0.0) -> 3.12.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.osgi:[3.7.0,4.0.0) -> 3.11.3
+     |    |    |         +--- org.eclipse.platform:org.eclipse.equinox.common:[3.8.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.core.jobs:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.8.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.4.0,4.0.0) -> 3.6.100
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.7.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.equinox.preferences:[3.4.0,4.0.0) -> 3.6.1
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.core.contenttype:[3.3.0,4.0.0) -> 3.5.100
+     |    |    |         |    +--- org.eclipse.platform:org.eclipse.equinox.preferences:[3.2.0,4.0.0) -> 3.6.1 (*)
+     |    |    |         |    +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.2.0,4.0.0) -> 3.6.100 (*)
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |         \--- org.eclipse.platform:org.eclipse.equinox.app:[1.0.0,) -> 1.3.400
+     |    |    |              +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.4.0,4.0.0) -> 3.6.100 (*)
+     |    |    |              \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    +--- org.eclipse.platform:org.eclipse.core.filesystem:[1.3.0,2.0.0) -> 1.6.1
+     |    |    |    +--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |    +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.2.0,4.0.0) -> 3.6.100 (*)
+     |    |    |    \--- org.eclipse.platform:org.eclipse.osgi:[3.2.0,4.0.0) -> 3.11.3
+     |    |    \--- org.eclipse.platform:org.eclipse.core.runtime:[3.12.0,4.0.0) -> 3.12.0 (*)
+     |    +--- org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,4.0.0) -> 3.12.0 (*)
+     |    +--- org.eclipse.platform:org.eclipse.core.filesystem:[1.0.0,2.0.0) -> 1.6.1 (*)
+     |    \--- org.eclipse.platform:org.eclipse.text:[3.1.0,4.0.0) -> 3.6.0
+     |         +--- org.eclipse.platform:org.eclipse.core.commands:[3.5.0,4.0.0) -> 3.8.1
+     |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |         \--- org.eclipse.platform:org.eclipse.equinox.common:[3.5.0,4.0.0) -> 3.8.0
+     \--- org.eclipse.jdt:org.eclipse.jdt.compiler.apt:1.2.100
+          \--- org.eclipse.jdt:org.eclipse.jdt.core:[3.5.0,4.0.0) -> 3.12.3 (*)
+
+testCompileOnly - Compile dependencies for source set 'test'.
++--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext.util:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT
+|    |    |    +--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT
+|    |    |    |    \--- com.google.guava:guava:[14.0,19) -> 18.0
+|    |    |    \--- org.eclipse.xtend:org.eclipse.xtend.lib.macro:2.13.0-SNAPSHOT
+|    |    |         \--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT (*)
+|    |    +--- log4j:log4j:1.2.16
+|    |    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    |    +--- org.eclipse.emf:org.eclipse.emf.ecore:[2.10.2,3) -> 2.12.0
+|    |    \--- com.google.inject:guice:3.0
+|    |         +--- javax.inject:javax.inject:1
+|    |         \--- aopalliance:aopalliance:1.0
+|    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT (*)
+|    +--- log4j:log4j:1.2.16
+|    +--- org.eclipse.platform:org.eclipse.equinox.common:3.8.0
+|    +--- org.eclipse.platform:org.eclipse.osgi:3.11.2 -> 3.11.3
+|    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    +--- org.eclipse.emf:org.eclipse.emf.ecore.xmi:[2.10.2,3) -> 2.12.0
+|    +--- com.google.inject:guice:3.0 (*)
+|    \--- org.antlr:antlr-runtime:3.2 -> 3.5.2
++--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT
+|    \--- org.eclipse.xtext:org.eclipse.xtext.common.types:2.13.0-SNAPSHOT
+|         +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|         \--- org.ow2.asm:asm-commons:5.0.1
+|              \--- org.ow2.asm:asm-tree:5.0.1
+|                   \--- org.ow2.asm:asm:5.0.1
++--- org.antlr:antlr:3.2.1 FAILED
++--- org.antlr:antlr4:4.7
+|    +--- org.antlr:antlr4-runtime:4.7
+|    +--- org.antlr:antlr-runtime:3.5.2
+|    +--- org.antlr:ST4:4.0.8
+|    |    \--- org.antlr:antlr-runtime:3.5.2
+|    +--- org.abego.treelayout:org.abego.treelayout.core:1.0.3
+|    +--- org.glassfish:javax.json:1.0.4
+|    \--- com.ibm.icu:icu4j:58.2
++--- junit:junit:4.12
+|    \--- org.hamcrest:hamcrest-core:1.3
++--- org.eclipse.xtext:org.eclipse.xtext.testing:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|    +--- org.eclipse.xtext:org.eclipse.xtext.ide:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|    |    \--- org.eclipse.lsp4j:org.eclipse.lsp4j:0.2.0
+|    |         +--- org.eclipse.lsp4j:org.eclipse.lsp4j.generator:0.2.0
+|    |         |    +--- org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.2.0
+|    |         |    |    \--- com.google.code.gson:gson:2.7
+|    |         |    \--- org.eclipse.xtend:org.eclipse.xtend.lib:[2.11.0,3) -> 2.13.0-SNAPSHOT (*)
+|    |         \--- org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.2.0 (*)
+|    \--- org.eclipse.lsp4j:org.eclipse.lsp4j:0.2.0 (*)
+\--- org.eclipse.xtext:org.eclipse.xtext.xbase.testing:2.13.0-SNAPSHOT
+     +--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT (*)
+     +--- org.eclipse.xtext:org.eclipse.xtext.testing:2.13.0-SNAPSHOT (*)
+     +--- junit:junit:4.12 (*)
+     +--- org.eclipse.jdt:org.eclipse.jdt.core:3.12.2 -> 3.12.3
+     |    +--- org.eclipse.platform:org.eclipse.core.resources:[3.3.0,4.0.0) -> 3.11.1
+     |    |    +--- org.eclipse.platform:org.eclipse.core.expressions:[3.2.0,4.0.0) -> 3.5.100
+     |    |    |    \--- org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,4.0.0) -> 3.12.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.osgi:[3.7.0,4.0.0) -> 3.11.3
+     |    |    |         +--- org.eclipse.platform:org.eclipse.equinox.common:[3.8.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.core.jobs:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.8.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.4.0,4.0.0) -> 3.6.100
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.7.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.equinox.preferences:[3.4.0,4.0.0) -> 3.6.1
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.core.contenttype:[3.3.0,4.0.0) -> 3.5.100
+     |    |    |         |    +--- org.eclipse.platform:org.eclipse.equinox.preferences:[3.2.0,4.0.0) -> 3.6.1 (*)
+     |    |    |         |    +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.2.0,4.0.0) -> 3.6.100 (*)
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |         \--- org.eclipse.platform:org.eclipse.equinox.app:[1.0.0,) -> 1.3.400
+     |    |    |              +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.4.0,4.0.0) -> 3.6.100 (*)
+     |    |    |              \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    +--- org.eclipse.platform:org.eclipse.core.filesystem:[1.3.0,2.0.0) -> 1.6.1
+     |    |    |    +--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |    +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.2.0,4.0.0) -> 3.6.100 (*)
+     |    |    |    \--- org.eclipse.platform:org.eclipse.osgi:[3.2.0,4.0.0) -> 3.11.3
+     |    |    \--- org.eclipse.platform:org.eclipse.core.runtime:[3.12.0,4.0.0) -> 3.12.0 (*)
+     |    +--- org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,4.0.0) -> 3.12.0 (*)
+     |    +--- org.eclipse.platform:org.eclipse.core.filesystem:[1.0.0,2.0.0) -> 1.6.1 (*)
+     |    \--- org.eclipse.platform:org.eclipse.text:[3.1.0,4.0.0) -> 3.6.0
+     |         +--- org.eclipse.platform:org.eclipse.core.commands:[3.5.0,4.0.0) -> 3.8.1
+     |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |         \--- org.eclipse.platform:org.eclipse.equinox.common:[3.5.0,4.0.0) -> 3.8.0
+     \--- org.eclipse.jdt:org.eclipse.jdt.compiler.apt:1.2.100
+          \--- org.eclipse.jdt:org.eclipse.jdt.core:[3.5.0,4.0.0) -> 3.12.3 (*)
+
+testRuntime - Runtime dependencies for source set 'test'.
++--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext.util:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT
+|    |    |    +--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT
+|    |    |    |    \--- com.google.guava:guava:[14.0,19) -> 18.0
+|    |    |    \--- org.eclipse.xtend:org.eclipse.xtend.lib.macro:2.13.0-SNAPSHOT
+|    |    |         \--- org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.13.0-SNAPSHOT (*)
+|    |    +--- log4j:log4j:1.2.16
+|    |    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    |    +--- org.eclipse.emf:org.eclipse.emf.ecore:[2.10.2,3) -> 2.12.0
+|    |    \--- com.google.inject:guice:3.0
+|    |         +--- javax.inject:javax.inject:1
+|    |         \--- aopalliance:aopalliance:1.0
+|    +--- org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0-SNAPSHOT (*)
+|    +--- log4j:log4j:1.2.16
+|    +--- org.eclipse.platform:org.eclipse.equinox.common:3.8.0
+|    +--- org.eclipse.platform:org.eclipse.osgi:3.11.2 -> 3.11.3
+|    +--- org.eclipse.emf:org.eclipse.emf.common:[2.10.1,3) -> 2.12.0
+|    +--- org.eclipse.emf:org.eclipse.emf.ecore.xmi:[2.10.2,3) -> 2.12.0
+|    +--- com.google.inject:guice:3.0 (*)
+|    \--- org.antlr:antlr-runtime:3.2 -> 3.5.2
++--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT
+|    \--- org.eclipse.xtext:org.eclipse.xtext.common.types:2.13.0-SNAPSHOT
+|         +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|         \--- org.ow2.asm:asm-commons:5.0.1
+|              \--- org.ow2.asm:asm-tree:5.0.1
+|                   \--- org.ow2.asm:asm:5.0.1
++--- org.antlr:antlr:3.2.1 FAILED
++--- org.antlr:antlr4:4.7
+|    +--- org.antlr:antlr4-runtime:4.7
+|    +--- org.antlr:antlr-runtime:3.5.2
+|    +--- org.antlr:ST4:4.0.8
+|    |    \--- org.antlr:antlr-runtime:3.5.2
+|    +--- org.abego.treelayout:org.abego.treelayout.core:1.0.3
+|    +--- org.glassfish:javax.json:1.0.4
+|    \--- com.ibm.icu:icu4j:58.2
++--- junit:junit:4.12
+|    \--- org.hamcrest:hamcrest-core:1.3
++--- org.eclipse.xtext:org.eclipse.xtext.testing:2.13.0-SNAPSHOT
+|    +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|    +--- org.eclipse.xtext:org.eclipse.xtext.ide:2.13.0-SNAPSHOT
+|    |    +--- org.eclipse.xtext:org.eclipse.xtext:2.13.0-SNAPSHOT (*)
+|    |    \--- org.eclipse.lsp4j:org.eclipse.lsp4j:0.2.0
+|    |         +--- org.eclipse.lsp4j:org.eclipse.lsp4j.generator:0.2.0
+|    |         |    +--- org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.2.0
+|    |         |    |    \--- com.google.code.gson:gson:2.7
+|    |         |    \--- org.eclipse.xtend:org.eclipse.xtend.lib:[2.11.0,3) -> 2.13.0-SNAPSHOT (*)
+|    |         \--- org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.2.0 (*)
+|    \--- org.eclipse.lsp4j:org.eclipse.lsp4j:0.2.0 (*)
+\--- org.eclipse.xtext:org.eclipse.xtext.xbase.testing:2.13.0-SNAPSHOT
+     +--- org.eclipse.xtext:org.eclipse.xtext.xbase:2.13.0-SNAPSHOT (*)
+     +--- org.eclipse.xtext:org.eclipse.xtext.testing:2.13.0-SNAPSHOT (*)
+     +--- junit:junit:4.12 (*)
+     +--- org.eclipse.jdt:org.eclipse.jdt.core:3.12.2 -> 3.12.3
+     |    +--- org.eclipse.platform:org.eclipse.core.resources:[3.3.0,4.0.0) -> 3.11.1
+     |    |    +--- org.eclipse.platform:org.eclipse.core.expressions:[3.2.0,4.0.0) -> 3.5.100
+     |    |    |    \--- org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,4.0.0) -> 3.12.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.osgi:[3.7.0,4.0.0) -> 3.11.3
+     |    |    |         +--- org.eclipse.platform:org.eclipse.equinox.common:[3.8.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.core.jobs:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.8.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.4.0,4.0.0) -> 3.6.100
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.7.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.equinox.preferences:[3.4.0,4.0.0) -> 3.6.1
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |         +--- org.eclipse.platform:org.eclipse.core.contenttype:[3.3.0,4.0.0) -> 3.5.100
+     |    |    |         |    +--- org.eclipse.platform:org.eclipse.equinox.preferences:[3.2.0,4.0.0) -> 3.6.1 (*)
+     |    |    |         |    +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.2.0,4.0.0) -> 3.6.100 (*)
+     |    |    |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |         \--- org.eclipse.platform:org.eclipse.equinox.app:[1.0.0,) -> 1.3.400
+     |    |    |              +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.4.0,4.0.0) -> 3.6.100 (*)
+     |    |    |              \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    +--- org.eclipse.platform:org.eclipse.core.filesystem:[1.3.0,2.0.0) -> 1.6.1
+     |    |    |    +--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |    |    |    +--- org.eclipse.platform:org.eclipse.equinox.registry:[3.2.0,4.0.0) -> 3.6.100 (*)
+     |    |    |    \--- org.eclipse.platform:org.eclipse.osgi:[3.2.0,4.0.0) -> 3.11.3
+     |    |    \--- org.eclipse.platform:org.eclipse.core.runtime:[3.12.0,4.0.0) -> 3.12.0 (*)
+     |    +--- org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,4.0.0) -> 3.12.0 (*)
+     |    +--- org.eclipse.platform:org.eclipse.core.filesystem:[1.0.0,2.0.0) -> 1.6.1 (*)
+     |    \--- org.eclipse.platform:org.eclipse.text:[3.1.0,4.0.0) -> 3.6.0
+     |         +--- org.eclipse.platform:org.eclipse.core.commands:[3.5.0,4.0.0) -> 3.8.1
+     |         |    \--- org.eclipse.platform:org.eclipse.equinox.common:[3.2.0,4.0.0) -> 3.8.0
+     |         \--- org.eclipse.platform:org.eclipse.equinox.common:[3.5.0,4.0.0) -> 3.8.0
+     \--- org.eclipse.jdt:org.eclipse.jdt.compiler.apt:1.2.100
+          \--- org.eclipse.jdt:org.eclipse.jdt.core:[3.5.0,4.0.0) -> 3.12.3 (*)
+
+xtextLanguages
+No dependencies
+
+(*) - dependencies omitted (listed previously)
+
+BUILD SUCCESSFUL
+
+Total time: 2.092 secs

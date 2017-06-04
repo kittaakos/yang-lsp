@@ -3,9 +3,13 @@
  */
 package io.typefox.yang
 
-
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 class YangRuntimeModule extends AbstractYangRuntimeModule {
+	
+	override bindInternalYangLexer() {
+		Antlr4BasedInternalYangLexer
+	}
+	
 }

@@ -84,24 +84,8 @@ STRING=[^\ \n\r\t\{\}\;\'\"]+
 SINGLE_QUOTED_STRING= "'" [^']* "'"?
 DOUBLE_QUOTED_STRING= \" ([^\\\"]|\\.)* \"?
 
-%s AWAITING_EXPRESSION, IN_EXPRESSION_STRING
-
 %%
 
-
-<AWAITING_EXPRESSION> {
-	{ML_COMMENT} { return RULE_ML_COMMENT; }
-	{SL_COMMENT} { return RULE_SL_COMMENT; }
-	\" {yybegin(IN_EXPRESSION_STRING); return QuotationMark;}
-	{ID} { yybegin(YYINITIAL); return RULE_ID; }
-}
-
-<IN_EXPRESSION_STRING> {
-	\" {yybegin(YYINITIAL); return QuotationMark;}
-	{ID} { return RULE_ID; }
-}
-
-<YYINITIAL> {
 "action"                  {return Action; }
 "anydata"                 {return Anydata; }
 "anyxml"                  {return Anyxml; }
@@ -121,17 +105,17 @@ DOUBLE_QUOTED_STRING= \" ([^\\\"]|\\.)* \"?
  "error-app-tag"          {return ErrorAppTag; }
  "error-message"          {return ErrorMessage; }
  "extension"              {return Extension; }
- "deviation"              {yybegin(AWAITING_EXPRESSION); return Deviation; }
+ "deviation"              {return Deviation; }
  "deviate"                {return Deviate; }
  "feature"                {return Feature; }
  "fraction-digits"        {return FractionDigits; }
  "grouping"               {return Grouping; }
  "identity"               {return Identity; }
- "if-feature"             {yybegin(AWAITING_EXPRESSION); return IfFeature; }
+ "if-feature"             {return IfFeature; }
  "import"                 {return Import; }
  "include"                {return Include; }
  "input"                  {return Input; }
- "key"                    {yybegin(AWAITING_EXPRESSION); return Key; }
+ "key"                    {return Key; }
  "leaf"                   {return Leaf; }
  "leaf-list"              {return LeafList; }
  "length"                 {return Length; }
@@ -140,13 +124,13 @@ DOUBLE_QUOTED_STRING= \" ([^\\\"]|\\.)* \"?
  "max-elements"           {return MaxElements; }
  "min-elements"           {return MinElements; }
  "module"                 {return Module; }
- "must"                   {yybegin(AWAITING_EXPRESSION); return Must; }
+ "must"                   {return Must; }
  "namespace"              {return Namespace; }
  "notification"           {return Notification; }
  "ordered-by"             {return OrderedBy; }
  "organization"           {return Organization; }
  "output"                 {return Output; }
- "path"                   {yybegin(AWAITING_EXPRESSION); return Path; }
+ "path"                   {return Path; }
  "pattern"                {return Pattern; }
  "position"               {return Position; }
  "prefix"                 {return Prefix; }
@@ -162,7 +146,7 @@ DOUBLE_QUOTED_STRING= \" ([^\\\"]|\\.)* \"?
  "submodule"              {return Submodule; }
  "type"                   {return Type; }
  "typedef"                {return Typedef; }
- "unique"                 {yybegin(AWAITING_EXPRESSION); return Unique; }
+ "unique"                 {return Unique; }
  "units"                  {return Units; }
  "uses"                   {return Uses; }
  "value"                  {return Value; }
@@ -170,18 +154,18 @@ DOUBLE_QUOTED_STRING= \" ([^\\\"]|\\.)* \"?
  "yang-version"           {return YangVersion; }
  "yin-element"            {return YinElement; }
 	
-	{ID} { yybegin(YYINITIAL); return RULE_YANG_ID; }
-	{STRING} { return RULE_STRING; }	
-		
-	{SINGLE_QUOTED_ID} { return RULE_YANG_ID; }
-	{SINGLE_QUOTED_STRING} { return RULE_STRING; }
+{ID} { return RULE_ID; }
+\:   { return Colon; }
+{STRING} { return RULE_STRING; }
 	
-	{DOUBLE_QUOTED_ID} { return RULE_YANG_ID; }
-	{DOUBLE_QUOTED_STRING} { return RULE_STRING; }	
-	
-	{ML_COMMENT} { return RULE_ML_COMMENT; }
-	{SL_COMMENT} { return RULE_SL_COMMENT; }
-}
+{SINGLE_QUOTED_ID} { return RULE_ID; }
+{SINGLE_QUOTED_STRING} { return RULE_SQ_STRING; }
+
+{DOUBLE_QUOTED_ID} { return RULE_ID; }
+{DOUBLE_QUOTED_STRING} { return RULE_DQ_STRING; }	
+
+{ML_COMMENT} { return RULE_ML_COMMENT; }
+{SL_COMMENT} { return RULE_SL_COMMENT; }
 \; { return Semicolon; }
 \{ { return LeftCurlyBracket; }
 \} { return RightCurlyBracket; }
