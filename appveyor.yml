@@ -13,3 +13,7 @@ install:
 
 build_script:
   - ./yang-lsp/gradlew.bat -p yang-lsp installDist --refresh-dependencies
+
+cache:
+ - C:\Users\appveyor\.gradle
+ - C:\Users\appveyor\.m2
