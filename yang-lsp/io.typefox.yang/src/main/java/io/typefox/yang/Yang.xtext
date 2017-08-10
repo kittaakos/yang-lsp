@@ -1,0 +1,757 @@
+grammar io.typefox.yang.Yang hidden(WS, ML_COMMENT, SL_COMMENT, HIDDEN)
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+generate yang "http://www.typefox.io/yang/Yang"
+
+AbstractModule:
+	Module|
+	Submodule
+;
+	
+fragment StatementEnd returns Statement:
+	('{'
+		substatements+=Statement*
+	'}' | ';')
+;
+
+Statement:
+	  SchemaNode | 
+	  OtherStatement
+;
+
+AbstractImport:
+	  Import
+	| Include
+;
+
+SchemaNode :
+	DataSchemaNode |
+	Extension |
+	Feature |
+	Grouping |
+	Identity |
+	Notification  |
+	Rpc |
+	Input |
+	Output |
+	Typedef
+;
+
+DataSchemaNode :
+	Anydata |
+	Anyxml |
+	Container |
+	Choice |
+	Case |
+	List |
+	Leaf |
+	LeafList
+;
+
+OtherStatement :
+	  AbstractModule
+	| AbstractImport
+	| Action
+	| Argument
+	| Augment
+	| Base
+	| BelongsTo
+	| Config
+	| Contact
+	| Default
+	| Description
+	| Enumerable
+	| ErrorAppTag
+	| ErrorMessage
+	| Deviation
+	| Deviate
+	| FractionDigits
+	| IfFeature
+	| Key
+	| Mandatory
+	| MaxElements
+	| MinElements
+	| Modifier
+	| Must
+	| Namespace
+	| Ordered
+	| OrderedBy
+	| Organization
+	| Path
+	| Pattern
+	| Prefix
+	| Presence
+	| Reference
+	| Refine
+	| Refinable
+	| RequireInstance
+	| Revision
+	| RevisionDate
+	| Status
+	| Type
+	| Unique
+	| Units
+	| Unknown
+	| Uses
+	| When
+	| YangVersion
+	| YinElement
+;
+
+Enumerable:
+	Enum | Bit
+;
+
+Ordered:
+	Position | Value
+;
+
+Refinable : 
+	Range | Length
+;
+
+// 7.1	
+Module:
+	'module' name=StringValue StatementEnd;
+
+// 7.1.2 
+YangVersion : 
+	'yang-version' yangVersion=StringValue StatementEnd;
+
+// 7.1.3
+Namespace : 
+	'namespace' uri=StringValue StatementEnd ;
+
+// 7.1.4
+Prefix : 
+	'prefix' prefix=StringValue StatementEnd ;
+
+// 7.1.5
+Import:
+	'import' module=[AbstractModule|StringValue] StatementEnd;
+	
+// 7.1.5.1
+RevisionDate:
+	'revision-date' date=[Revision|StringValue] StatementEnd
+;
+
+// 7.1.6
+Include: 
+	'include' module=[AbstractModule|StringValue] StatementEnd ;
+
+// 7.1.7
+Organization: 
+	'organization' organization=StringValue StatementEnd;
+
+// 7.1.8
+Contact: 
+	'contact' contact=StringValue StatementEnd;
+
+// 7.1.9
+Revision :
+	'revision' revision=StringValue StatementEnd;
+
+// 7.2
+Submodule:
+	'submodule' name=StringValue StatementEnd;
+
+// 7.2.2
+BelongsTo : 
+	'belongs-to' module=[Module|StringValue] StatementEnd;
+
+// 7.3
+Typedef: 
+	'typedef' name=StringValue StatementEnd;
+	
+// 7.3.3
+Units:
+	'units' definition=StringValue StatementEnd;
+	
+// 7.3.4
+Default:
+	'default' defaultStringValue=StringValue StatementEnd;
+
+// 7.4
+Type:
+	'type' typeRef=TypeReference StatementEnd;
+	
+TypeReference:                            
+	builtin=BUILTIN_TYPE |
+	type=[Typedef|QualifiedTypeName]
+;
+
+// 7.5
+Container:
+	'container' name=StringValue StatementEnd
+;
+
+// 7.5.3
+Must:
+	'must' constraint=XpathExpression StatementEnd
+;
+
+// 7.5.4.1 
+ErrorMessage:
+	'error-message' message=StringValue StatementEnd
+;
+
+// 7.5.4.2
+ErrorAppTag:
+	'error-app-tag' tag=StringValue StatementEnd
+;
+
+// 7.5.5
+Presence :	
+	'presence' description=StringValue StatementEnd
+;
+
+// 7.6
+Leaf :
+	'leaf' name=StringValue StatementEnd 
+;
+
+// 7.6.5
+Mandatory :
+	'mandatory' isMandatory=StringValue StatementEnd
+;
+
+// 7.7
+LeafList:
+	'leaf-list' name=StringValue StatementEnd
+;
+
+// 7.7.5
+MinElements:
+	'min-elements' minElements=StringValue StatementEnd
+;
+
+// 7.7.6
+MaxElements:
+	'max-elements' maxElements=StringValue StatementEnd
+;
+
+// 7.7.7
+OrderedBy:
+	'ordered-by' orderedBy=StringValue StatementEnd
+;
+
+// 7.8
+List:
+	'list' name=StringValue StatementEnd
+;
+
+// 7.8.2
+Key:
+	{Key} 'key' (references+=KeyReference)+ StatementEnd
+;
+
+KeyReference:
+	node=[Leaf|QNAME]
+;
+
+fragment DescendantSchemaNodeIdentifierReferences :
+	references+=DescendantSchemaNodeIdentifier+
+;
+
+// 7.8.3
+Unique:
+	{Unique} 'unique' DescendantSchemaNodeIdentifierReferences StatementEnd
+;
+
+// 7.9
+Choice:
+	'choice' name=StringValue StatementEnd
+;
+
+// 7.9.2
+Case:
+	'case' name=StringValue StatementEnd
+;
+
+// 7.10
+Anydata:
+	'anydata' name=StringValue StatementEnd
+;
+
+// 7.11
+Anyxml:
+	'anyxml' name=StringValue StatementEnd
+;
+
+// 7.12
+Grouping:
+	'grouping' name=StringValue StatementEnd
+;
+
+// 7.13
+Uses:
+	'uses' grouping=GroupingRef StatementEnd
+;
+
+// 7.13.2
+Refine:
+	'refine' node=SchemaNodeIdentifier StatementEnd
+;
+
+// 7.14
+Rpc:
+	'rpc' name=StringValue StatementEnd
+;
+
+// input and output should never have name, but we want it to be a subtype of SchemaNode
+// 7.14.2
+Input:
+	{Input} 'input' (name=StringValue)? StatementEnd
+;
+
+// 7.14.3
+Output:
+	{Output} 'output' (name=StringValue)? StatementEnd
+;
+
+// 7.15
+Action:
+	'action' name=StringValue StatementEnd
+;
+
+// 7.16
+Notification:
+	'notification' name=StringValue StatementEnd
+;
+
+// 7.17
+Augment:
+	'augment' path=SchemaNodeIdentifier StatementEnd
+;
+
+// 7.18
+Identity:
+	'identity' name=StringValue StatementEnd
+;
+
+// 7.18.2
+Base:
+	'base' reference=[Identity| QNAME] StatementEnd
+;
+
+// 7.19
+Extension:
+	'extension' name=StringValue StatementEnd
+;
+
+// 7.19.2
+Argument:
+	'argument' name=StringValue StatementEnd
+;
+
+// 7.19.3
+YinElement:
+	'yin-element' isYinElement=StringValue StatementEnd
+;
+
+// 7.20.1
+Feature:
+	'feature' name=StringValue StatementEnd
+;
+
+// 7.20.2
+IfFeature:
+	'if-feature' condition=IfFeatureOrExpression StatementEnd
+;
+
+IfFeatureOrExpression returns Expression:
+	IfFeatureAndExpression ({BinaryOperator.left=current} operator='or' right=IfFeatureAndExpression)*
+;
+
+IfFeatureAndExpression returns Expression:
+	IfFeatureExpression ({BinaryOperator.left=current} operator='and' right=IfFeatureExpression)*
+;
+
+IfFeatureExpression returns Expression:
+	{FeatureReference} feature=[Feature|QNAME] |
+	{UnaryOperation} operator='not' target=IfFeatureExpression |
+	'(' IfFeatureOrExpression ')'
+;
+
+// 7.20.3
+Deviation:
+	'deviation' reference=SchemaNodeIdentifier StatementEnd
+;
+
+// 7.20.3.2
+Deviate:
+	'deviate' argument=StringValue StatementEnd
+;
+
+// Common Statement
+
+// 7.21.1
+Config:
+	'config' isConfig=StringValue StatementEnd
+;
+
+// 7.21.2
+Status:
+	'status' argument=StringValue StatementEnd
+;
+
+// 7.21.3
+Description :
+	'description' description=StringValue StatementEnd;
+
+// 7.21.4
+Reference :
+	'reference' reference=StringValue StatementEnd;
+	
+// 7.21.5
+When :
+	'when' condition=XpathExpression StatementEnd
+;
+
+// 9.2.4 
+Range :
+	'range' expression=RefinementExpression StatementEnd
+;
+
+RefinementExpression returns Expression:
+	RangeRefinementExpression ({BinaryOperation.left=current} operator='|' right=RangeRefinementExpression)*
+;
+
+RangeRefinementExpression returns Expression:
+	ExplicitRefinementExpression ({BinaryOperation.left=current} operator='..' right=ExplicitRefinementExpression)?
+;
+
+ExplicitRefinementExpression returns Expression:
+	{Literal} value = NUMBER | {Min} 'min' | {Max} 'max'
+;
+
+// 9.3.4
+FractionDigits:
+	'fraction-digits' range=StringValue StatementEnd
+;
+
+// 9.4.4
+Length :
+	'length' expression=RefinementExpression StatementEnd
+;
+
+// 9.4.5
+Pattern:
+	'pattern' regexp=StringValue StatementEnd
+;
+
+// 9.4.5
+Modifier:
+	'modifier' modifier=StringValue StatementEnd
+;
+
+// 9.6.4
+Enum:
+	'enum' name=StringValue StatementEnd
+;
+
+// 9.6.4.2
+Value:
+	'value' ordinal=StringValue StatementEnd
+;
+
+// 9.7.4
+Bit:
+	'bit' name=StringValue StatementEnd
+;
+
+// 9.7.4.2
+Position:
+	'position' ordinal=StringValue StatementEnd
+;
+
+// 9.9.2
+Path:
+	'path' reference=XpathExpression StatementEnd
+;
+
+// 9.9.3
+RequireInstance:
+	'require-instance' isRequireInstance=StringValue StatementEnd
+;
+
+Unknown:
+	extension=[Extension|EXTENSION_NAME] name=StringValue? StatementEnd 
+;
+
+DescendantSchemaNodeIdentifier returns SchemaNodeIdentifier:
+	DescendantRootSchemaNodeIdentifier ({SchemaNodeIdentifier.target=current} '/' schemaNode=[SchemaNode|QNAME])*
+;
+
+DescendantRootSchemaNodeIdentifier returns SchemaNodeIdentifier:
+	schemaNode=[SchemaNode|QNAME]
+;
+
+SchemaNodeIdentifier returns SchemaNodeIdentifier:
+	RootSchemaNodeIdentifier ({SchemaNodeIdentifier.target=current} '/' schemaNode=[SchemaNode|QNAME])*
+;
+
+RootSchemaNodeIdentifier returns SchemaNodeIdentifier:
+	isAbsolute?='/'? schemaNode=[SchemaNode|QNAME]
+;
+
+GroupingRef:
+	node=[Grouping|QNAME]
+;
+
+
+/////////////////////////////////
+// Xpath 1.0
+/////////////////////////////////
+
+XpathExpression returns XpathExpression:  
+	XpathOrExpr
+;
+
+XpathOrExpr  returns XpathExpression:  
+	XpathAndExpr ({XpathBinaryOperation.left=current} operator='or' right=XpathAndExpr)*
+;
+
+XpathAndExpr  returns XpathExpression:  
+	XpathEqualityExpr ({XpathBinaryOperation.left=current} operator='and' right=XpathEqualityExpr)*
+;
+
+XpathEqualityExpr returns XpathExpression:  
+	XpathRelationalExpr ({XpathBinaryOperation.left=current} operator=('='|'!=') right=XpathRelationalExpr)*
+;
+
+XpathRelationalExpr returns XpathExpression : 
+	XpathAdditiveExpr ({XpathBinaryOperation.left=current} operator=('<'|'>'|'<='|'>=') right=XpathAdditiveExpr)*
+;
+
+XpathAdditiveExpr returns XpathExpression :  
+	XpathMultiplicativeExpr ({XpathBinaryOperation.left=current} operator=('+'|'-') right=XpathMultiplicativeExpr)*
+;
+
+XpathMultiplicativeExpr returns XpathExpression :  
+	XpathUnaryExpr ({XpathBinaryOperation.left=current} operator=('*'|'div'|'mod') right=XpathMultiplicativeExpr)?
+;
+
+XpathUnaryExpr returns XpathExpression :
+	{XpathUnaryOperation} operator='-' target=XpathUnionExpr
+	| XpathUnionExpr
+;
+
+XpathUnionExpr returns XpathExpression :  
+	 XpathPathExpr ({XpathBinaryOperation.left=current} operator='|' right=XpathUnionExpr)?
+;
+
+
+XpathPathExpr returns XpathExpression :  
+	 XpathFilterExpr ({XpathLocation.target=current} '/' ->(isAbbreviated?='/')? step=XpathStep ({XpathFilter.target = current} '[' predicate=XpathExpression ']')*)*
+;
+
+XpathFilterExpr returns XpathExpression : 
+	XpathPrimaryExpr ({XpathFilter.target = current} '[' predicate=XpathExpression ']')*
+;
+
+XpathPrimaryExpr returns XpathExpression :  
+	 {XpathVariableReference} '$' name=QNAME
+  |  '(' XpathExpression ')'
+  |  {XpathStringLiteral} value=STRING
+  |  {XpathNumberLiteral} value=NUMBER  
+  |  {XpathFunctionCall} name=QNAME '(' ( args+=XpathExpression ( ',' args+=XpathExpression )* )? ')'
+  |  {RelativePath} step=XpathStep
+  |  {AbsolutePath} '/' ->(isAbbreviated?='/')? ->step=XpathStep?
+;
+
+XpathStep returns XpathStep :
+	  {CurrentRef} '.'
+	| {ParentRef} '..'
+	| {AbbrevAttributeStep} '@' attributeName=(XpathIDOrKw|'*')  
+	| (axis=XpathAxisName ':' ':')? node=XpathNodeTest
+;
+
+XpathNodeTest:  
+	 XpathNameTest
+  |  XpathNodeType '(' ')'
+  |  'processing-instruction' '(' STRING ')'
+;
+
+XpathNameTest:  
+	(ID ':')? ('*'|XpathIDOrKw)
+;
+
+XpathNodeType:  
+     'comment'
+  |  'text'
+  |  'node'
+;
+  
+XpathAxisName:  
+     'ancestor'
+  |  'ancestor-or-self'
+  |  'attribute'
+  |  'child'
+  |  'descendant'
+  |  'descendant-or-self'
+  |  'following'
+  |  'following-sibling'
+  |  'namespace'
+  |  'parent'
+  |  'preceding'
+  |  'preceding-sibling'
+  |  'self'
+;
+
+XpathIDOrKw :
+	ID | 'div' | 'and'| 'or' | 'mod' | XpathAxisName | XpathNodeType
+;
+
+/////////////////////////////////
+/////////////////////////////////
+/////////////////////////////////
+/////////////////////////////////
+/////////////////////////////////
+/////////////////////////////////
+/////////////////////////////////
+// Leafref path
+
+QNAME:
+	(IdOrKw ':')? IdOrKw
+;
+
+StringValue :
+	STRING+
+;
+
+IdOrKw :
+	ID | BUILTIN_TYPE | KEYWORD
+;
+
+QualifiedTypeName:
+	((ID | KEYWORD) ':')? (ID|KEYWORD)
+;
+
+BUILTIN_TYPE :
+   'binary' | 
+   'bits' |
+   'boolean' |
+   'decimal64' |
+   'empty' |
+   'enumeration' |
+   'identityref' |
+   'instance-identifier' |
+   'int8' |
+   'int16' |
+   'int32' |
+   'int64' |
+   'leafref'|
+   'string'|
+   'uint8' |
+   'uint16' |
+   'uint32' |
+   'uint64' |
+   'union'
+;
+
+KEYWORD :
+	STATEMENT_KEYWORD
+	// other keywords
+	| 'add'
+	| 'current'
+	| 'delete'
+	| 'deprecated'
+	| 'false'
+	| 'max'
+	| 'min'
+	| 'not-supported'
+	| 'obsolete'
+	| 'replace'
+	| 'system'
+	| 'true'
+	| 'unbounded'
+	| 'user'
+;
+
+STATEMENT_KEYWORD :
+	'action'
+| 'anydata'
+| 'anyxml'
+| 'argument'
+| 'augment'
+| 'base'
+| 'belongs-to'
+| 'bit'
+| 'case'
+| 'choice'
+| 'config'
+| 'contact'
+| 'container'
+| 'default'
+| 'description'
+| 'enum'
+| 'error-app-tag'
+| 'error-message'
+| 'extension'
+| 'deviation'
+| 'deviate'
+| 'feature'
+| 'fraction-digits'
+| 'grouping'
+| 'identity'
+| 'if-feature'
+| 'import'
+| 'include'
+| 'input'
+| 'key'
+| 'leaf'
+| 'leaf-list'
+| 'length'
+| 'list'
+| 'mandatory'
+| 'max-elements'
+| 'min-elements'
+| 'module'
+| 'must'
+| 'namespace'
+| 'notification'
+| 'ordered-by'
+| 'organization'
+| 'output'
+| 'path'
+| 'pattern'
+| 'position'
+| 'prefix'
+| 'presence'
+| 'range'
+| 'reference'
+| 'refine'
+| 'require-instance'
+| 'revision'
+| 'revision-date'
+| 'rpc'
+| 'status'
+| 'submodule'
+| 'type'
+| 'typedef'
+| 'unique'
+| 'units'
+| 'uses'
+| 'value'
+| 'when'
+| 'yang-version'
+| 'yin-element'
+;
+
+
+// lexer rules
+
+terminal ID       : 'an id';
+terminal EXTENSION_NAME : 'ID:ID // only valid on statement ctx';
+terminal STRING   : 'an unquoted string';
+terminal NUMBER   : 'positive integer value';
+terminal OPERATOR : 'and' | 'or' | 'mod' | 'div' | '*' | '/' | '//' | '|' | '+' | '-' | '=' | '!=' | '<' | '<=' | '>' | '>=';
+
+terminal ML_COMMENT	: '/*' -> '*/';
+terminal SL_COMMENT 	: '//' !('\n'|'\r')* ('\r'? '\n')?;
+
+terminal WS			: (' '|'\t'|'\r'|'\n')+;
+terminal HIDDEN : 'other hidden tokens';
+
+terminal ANY_OTHER: .;

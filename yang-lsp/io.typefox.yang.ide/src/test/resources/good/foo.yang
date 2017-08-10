@@ -1,0 +1,25 @@
+module foo {
+    yang-version 1.1;
+    namespace "foo:bar";
+    prefix x;
+    
+    typedef foo {
+        type int32 {
+            range "1..40 | 60..100";
+        }
+    } 
+    typedef foo2 {
+        type foo {
+            range "4..20";
+        }
+    }
+    typedef foo3 {
+        type foo2 {
+            range "5..15";
+        }
+    }
+    
+    container c12 {
+    		container cool {}
+    }
+}

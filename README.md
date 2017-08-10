@@ -1,10 +1,12 @@
 # yang-lsp
+[![Build Status](https://travis-ci.org/yang-tools/yang-lsp.svg?branch=master)](https://travis-ci.org/yang-tools/yang-lsp)
+
 A Language Server for YANG
 
 ## Build
 
     git clone https://github.com/TypeFox/yang-lsp.git \
-    && cd yang-lsp/io.typefox.yang.parent \
+    && cd yang-lsp/yang-lsp \
     && ./gradlew build
 
 ### Troubleshooting
